@@ -103,13 +103,9 @@ export default function WaitlistPage() {
           <div className="bg-white/30 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-8 mb-8 animate-scale-in">
             {isSuccess ? (
               // Success State
-              <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
-                <div className="flex items-center">
-                  <CheckCircle className="text-emerald-500 mr-3" size={20} />
-                  <div>
-                    <h3 className="font-semibold text-emerald-800">You're on the list!</h3>
-                    <p className="text-sm text-emerald-600 mt-1">We'll notify you as soon as we launch.</p>
-                  </div>
+              <div className="text-center py-8">
+                <div className="text-2xl font-semibold text-black mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+                  ✅ You're on the list! We'll be in touch soon.
                 </div>
               </div>
             ) : (
