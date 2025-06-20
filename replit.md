@@ -86,7 +86,8 @@ The application is configured for Replit deployment with the following setup:
 
 ```
 Changelog:
-- June 20, 2025. Initial setup
+- June 20, 2025. Initial setup - Basic waitlist application with MobileApp branding
+- June 20, 2025. Major redesign - Updated to Nuskha branding with custom background, Satoshi fonts, simplified layout focused on "Desi Wisdom meets Digital Age" theme
 ```
 
 ## User Preferences

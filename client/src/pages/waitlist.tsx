@@ -8,8 +8,9 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Smartphone, Rocket, Zap, Shield, Sparkles, Users, CheckCircle, Mail, Loader2 } from "lucide-react";
+import { Users, CheckCircle, Mail, Loader2 } from "lucide-react";
 import logoPath from "@assets/logopng_1750416341824.png";
+import backgroundPath from "@assets/landingpageBG_1750459638564.png";
 import type { z } from "zod";
 
 type FormData = z.infer<typeof insertWaitlistRegistrationSchema>;
@@ -63,7 +64,10 @@ export default function WaitlistPage() {
   const currentCount = countData?.count || 1947;
 
   return (
-    <div className="font-[Inter] bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen">
+    <div 
+      className="font-[Inter] min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundPath})` }}
+    >
       {/* Header */}
       <header className="relative z-10 px-4 py-6">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
@@ -74,7 +78,7 @@ export default function WaitlistPage() {
               className="h-8 w-auto"
             />
           </div>
-          <div className="text-slate-600 text-sm font-medium">
+          <div className="text-black text-sm font-medium">
             Coming Soon
           </div>
         </div>
@@ -86,26 +90,17 @@ export default function WaitlistPage() {
           
           {/* Hero Content */}
           <div className="mb-12 animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-indigo-200 mb-6">
-              <Rocket size={16} className="text-indigo-500 mr-2" />
-              <span className="text-sm font-medium text-slate-700">Revolutionary Mobile Experience</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Get Early Access to{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent">
-                The Future
-              </span>
+            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight" style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 700 }}>
+              Desi Wisdom meets the Digital Age
             </h1>
             
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Join thousands of users waiting for the next breakthrough in mobile productivity. 
-              Be among the first to experience innovation that will change how you work and play.
+            <p className="text-xl text-black mb-8 leading-relaxed" style={{ fontFamily: 'Satoshi, sans-serif', fontWeight: 400 }}>
+              Thousands are already signing up to rediscover everyday wisdom from our roots. Join them and see how Nuskha brings tradition into the digital age.
             </p>
           </div>
 
           {/* Waitlist Form Card */}
-          <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-8 mb-8 animate-scale-in">
+          <div className="bg-white/30 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-8 mb-8 animate-scale-in">
             {isSuccess ? (
               // Success State
               <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
@@ -135,10 +130,10 @@ export default function WaitlistPage() {
                               {...field}
                               type="email"
                               placeholder="Enter your email address"
-                              className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200 text-slate-900 placeholder-slate-400 pr-10"
+                              className="w-full px-4 py-3 border border-white/30 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 text-black placeholder-black/50 pr-10 bg-white/30"
                             />
                             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                              <Mail size={16} className="text-slate-400" />
+                              <Mail size={16} className="text-black/50" />
                             </div>
                           </div>
                         </FormControl>
@@ -157,7 +152,8 @@ export default function WaitlistPage() {
                   <Button
                     type="submit"
                     disabled={registerMutation.isPending}
-                    className="w-full bg-gradient-to-r from-indigo-600 to-pink-600 hover:from-indigo-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="w-full text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                    style={{ backgroundColor: '#e08d3b' }}
                   >
                     {registerMutation.isPending ? (
                       <>
@@ -165,27 +161,27 @@ export default function WaitlistPage() {
                         Adding you to the list...
                       </>
                     ) : (
-                      "Join the Waitlist"
+                      "Let me know"
                     )}
                   </Button>
                 </form>
               </Form>
             )}
 
-            <p className="text-xs text-slate-500 mt-4 text-center">
+            <p className="text-xs text-black/60 mt-4 text-center">
               No spam, ever. Unsubscribe at any time.
             </p>
           </div>
 
           {/* Counter Section */}
-          <div className="bg-white/60 backdrop-blur-sm rounded-xl border border-white/30 p-6 animate-fade-in">
+          <div className="p-4 animate-fade-in">
             <div className="flex items-center justify-center space-x-4">
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-1 mb-2">
-                  <Users size={16} className="text-indigo-500" />
-                  <span className="text-sm font-medium text-slate-600">People waiting</span>
+                  <Users size={14} className="text-black" />
+                  <span className="text-sm font-medium text-black">People waiting</span>
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-slate-900">
+                <div className="text-2xl md:text-3xl font-bold text-black">
                   {countLoading ? (
                     <div className="animate-pulse">-</div>
                   ) : (
@@ -196,51 +192,13 @@ export default function WaitlistPage() {
             </div>
             
             {/* Live indicator */}
-            <div className="flex items-center justify-center mt-4 space-x-2">
+            <div className="flex items-center justify-center mt-3 space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-xs text-slate-500">Live counter</span>
-            </div>
-          </div>
-
-          {/* Feature Preview */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Zap size={20} className="text-white" />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Lightning Fast</h3>
-              <p className="text-sm text-slate-600">Built for speed and performance on all devices</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Shield size={20} className="text-white" />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Secure & Private</h3>
-              <p className="text-sm text-slate-600">Your data is encrypted and never shared</p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Sparkles size={20} className="text-white" />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2">AI Powered</h3>
-              <p className="text-sm text-slate-600">Smart features that adapt to your workflow</p>
+              <span className="text-xs text-black/60">Live counter</span>
             </div>
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="px-4 py-8 border-t border-white/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm text-slate-500">
-            © 2024 MobileApp. All rights reserved.{" "}
-            <a href="#" className="hover:text-indigo-600 transition-colors">Privacy Policy</a> ·{" "}
-            <a href="#" className="hover:text-indigo-600 transition-colors">Terms of Service</a>
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
