@@ -117,8 +117,8 @@ export default function WaitlistPage() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="block text-sm font-medium text-slate-700 mb-2">
-                          Email Address
+                        <FormLabel className="block text-sm font-medium text-black mb-2">
+                          Email Address *
                         </FormLabel>
                         <FormControl>
                           <div className="relative">
@@ -126,6 +126,7 @@ export default function WaitlistPage() {
                               {...field}
                               type="email"
                               placeholder="Enter your email address"
+                              required
                               className="w-full px-4 py-3 border border-white/30 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 text-black placeholder-black/50 pr-10 bg-white/30"
                             />
                             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
