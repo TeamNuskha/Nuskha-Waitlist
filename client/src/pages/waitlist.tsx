@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Smartphone, Rocket, Zap, Shield, Sparkles, Users, CheckCircle, Mail, Loader2 } from "lucide-react";
+import logoPath from "@assets/logopng_1750416341824.png";
 import type { z } from "zod";
 
 type FormData = z.infer<typeof insertWaitlistRegistrationSchema>;
@@ -25,7 +26,7 @@ export default function WaitlistPage() {
   });
 
   // Query to get current waitlist count
-  const { data: countData, isLoading: countLoading } = useQuery({
+  const { data: countData, isLoading: countLoading } = useQuery<{ count: number }>({
     queryKey: ["/api/waitlist/count"],
     refetchInterval: 30000, // Refetch every 30 seconds
   });
@@ -67,10 +68,11 @@ export default function WaitlistPage() {
       <header className="relative z-10 px-4 py-6">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg flex items-center justify-center">
-              <Smartphone size={16} className="text-white" />
-            </div>
-            <span className="text-xl font-bold text-slate-800">MobileApp</span>
+            <img 
+              src={logoPath} 
+              alt="Logo" 
+              className="h-8 w-auto"
+            />
           </div>
           <div className="text-slate-600 text-sm font-medium">
             Coming Soon
