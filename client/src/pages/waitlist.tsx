@@ -85,7 +85,7 @@ export default function WaitlistPage() {
       </header>
 
       {/* Main Content */}
-      <main className="relative px-4 pb-20">
+      <main className="relative px-4 pb-20 pt-8">
         <div className="max-w-2xl mx-auto text-center">
           
           {/* Hero Content */}
